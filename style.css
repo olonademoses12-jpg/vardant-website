@@ -1271,7 +1271,7 @@ nav a:hover {
 
 .fourth-images {
     display: flex;
-    gap: 55px;
+    gap: 20px;
     justify-content: center;
     padding-bottom: 5px;
     position: relative;
@@ -1279,8 +1279,8 @@ nav a:hover {
 
 .fourth-images img {
     max-width: 100%;
-    width: 250px;
-    height: 200px;
+    width: 250px; 
+    height: 200px; 
 }
 
 .image-design {
@@ -1360,24 +1360,38 @@ nav a:hover {
 
 @media (max-width: 640px) {
     .fourth-images {
-        gap: 20px;
+        gap: 10px;
+    }
+
+    .image-design {
+        width: 250px;
+    }
+}
+@media (max-width: 580px) {
+
+    .image-design {
+        width: 220px;
+    }
+}
+
+
+@media (max-width: 512px) {
+    .fourth-images {
+        gap: 5px;
     }
 
     .image-design {
         width: 200px;
     }
 }
-
-@media (max-width: 460px) {
-    .fourth-images {
-        gap: 5px;
-    }
+@media (max-width: 461px) {
 
     .image-design {
-        width: 150px;
+        width: 155px;
+        height: 100%;
+        margin-bottom: 10px;
     }
-}
-
+} 
 
 /* FIFTH SECTION */
 
