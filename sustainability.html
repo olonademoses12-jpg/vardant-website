@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability | Verdant</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sustainability.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+   <header class="logo-header">
+        <div class="logo-container">
+
+            <div class="logo-section">
+                <div class="logo"></div>
+                <h2 class="logo-text">Verdant</h2>
+            </div>
+
+            <nav id="nav-section">
+                <ul class="nav-links">
+                    <li><a href="shop.html#shop">Shop</a></li>
+                    <li><a href="shop.html#farms">Our Farms</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+
+                <div class="section-2">
+                    <input type="text"
+                        placeholder="Search greens, bread....."
+                        class="search-bar"
+                        id="product-search">                  
+                    <div class="auth-section" id="auth-section">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="cart-wrapper">
+                <button class="cart-button">
+                    Basket (<span id="cart-count">0</span>)
+                </button>
+
+                <div class="cart-dropdown" id="cart-dropdown">
+
+                    <div class="cart-heading">
+                        <h3>Your Basket</h3>
+                        <span id="cart-items-count">0 items</span>
+                    </div>
+
+                    <div id="cart-items">
+                        <p class="empty-cart">Your basket is empty.</p>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$<span id="cart-subtotal">0.00</span></span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+
+                        <div class="summary-row total-row">
+                            <strong>Total</strong>
+                            <strong>$<span id="cart-total">0.00</span></strong>
+                        </div>
+
+                       <button class="clear-basket-button" id="clear-basket">
+                            Clear Basket
+                        </button>
+
+                        <button class="checkout-button" id="checkout-button" disabled>
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </header>
+        <div id="cart-notification" class="cart-notification">
+            Product added to basket!
+        </div>
+    <main class="sustainability-page">
+
+        <section class="sustainability-hero">
+            <span class="sustainability-label">OUR COMMITMENT</span>
+
+            <h1>Good food. A greener future.</h1>
+
+            <p>
+                We believe that making thoughtful food choices can contribute
+                to a healthier community and a more sustainable future.
+                At Verdant, we're working towards making everyday shopping
+                more responsible.
+            </p>
+
+            <a href="#our-commitments" class="sustainability-button">
+                Explore Our Commitment
+            </a>
+        </section>
+
+        <section class="sustainability-intro" id="our-commitments">
+
+            <div class="sustainability-intro-text">
+                <span class="sustainability-label">WHY IT MATTERS</span>
+
+                <h2>Small choices can make a meaningful difference.</h2>
+
+                <p>
+                    Sustainability is about thinking beyond the products we buy.
+                    It means considering how food is sourced, how much goes to
+                    waste, and how our everyday decisions affect the environment
+                    and the communities around us.
+                </p>
+
+                <p>
+                    Our goal is to encourage more thoughtful shopping habits
+                    while building a grocery experience that values quality,
+                    responsibility and care.
+                </p>
+            </div>
+
+            <div class="sustainability-image">
+                <img src="images/thirty-three.jpg"
+                     alt="Fresh vegetables and natural produce">
+            </div>
+
+        </section>
+
+        <section class="commitments-section">
+
+            <div class="commitments-heading">
+                <span class="sustainability-label">WHAT WE BELIEVE IN</span>
+                <h2>Our sustainability priorities</h2>
+                <p>
+                    These are the areas guiding our approach to more
+                    responsible grocery shopping.
+                </p>
+            </div>
+
+            <div class="commitments-grid">
+
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="ph ph-plant"></i>
+                    </div>
+
+                    <h3>Supporting Local Farms</h3>
+
+                    <p>
+                        We value local farmers and producers. Supporting them
+                        can strengthen communities and encourage more
+                        responsible food systems.
+                    </p>
+                </div>
+
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="ph ph-recycle"></i>
+                    </div>
+
+                    <h3>Reducing Food Waste</h3>
+
+                    <p>
+                        We encourage thoughtful meal planning, proper food
+                        storage and buying quantities that match household needs.
+                    </p>
+                </div>
+
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="ph ph-package"></i>
+                    </div>
+
+                    <h3>Mindful Packaging</h3>
+
+                    <p>
+                        We recognise the importance of reducing unnecessary
+                        packaging and exploring more environmentally
+                        responsible packaging choices.
+                    </p>
+                </div>
+
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="ph ph-leaf"></i>
+                    </div>
+
+                    <h3>Conscious Shopping</h3>
+
+                    <p>
+                        We want to make it easier for customers to think about
+                        where their food comes from and make informed choices.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="food-waste-section">
+
+            <div class="food-waste-content">
+                <span class="sustainability-label">A LITTLE GOES A LONG WAY</span>
+
+                <h2>Let's make every grocery purchase count.</h2>
+
+                <p>
+                    You can help reduce food waste through simple everyday habits:
+                </p>
+
+                <ul>
+                    <li>Plan your meals before shopping.</li>
+                    <li>Make a shopping list and avoid unnecessary purchases.</li>
+                    <li>Store fresh produce properly.</li>
+                    <li>Use older ingredients before opening new ones.</li>
+                    <li>Share surplus food when it is safe and practical.</li>
+                </ul>
+
+                <a href="shop.html" class="sustainability-button">
+                    Shop Thoughtfully
+                </a>
+            </div>
+
+        </section>
+
+        <section class="sustainability-closing">
+            <span class="sustainability-label">GROWING TOGETHER</span>
+
+            <h2>A better future starts with everyday choices.</h2>
+
+            <p>
+                Thank you for being part of a community that values good food,
+                thoughtful choices and a greener future.
+            </p>
+
+            <a href="index.html" class="sustainability-button">
+                Back to Home
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <section class="section1">
+
+            <div>
+                <div class="logo-sect">
+                    <div class="logo1"></div>
+                    <h2 class="logo-text1">Verdant</h2>
+                </div>
+
+                <p class="parag">
+                    The neighborhood grocer, rebuilt around family farms and fast e-bikes.
+                </p>
+            </div>
+
+            <div class="foot">
+
+                <div>
+                    <ul>
+                        <p>SHOP</p>
+                        <li><a href="shop.html#produce">Fresh Produce</a></li>
+                        <li><a href="shop.html#dairy">Dairy & Eggs</a></li>
+                        <li><a href="shop.html#bakery">Bakery</a></li>
+                        <li><a href="shop.html#pantry">Pantry</a></li>
+                        <li><a href="shop.html#meat">Meat & Fish</a></li>
+                        <li><a href="shop.html#flowers">Flowers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <p>COMPANY</p>
+                        <li><a href="shop.html#farms">Our Farms</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <p>SUPPORT</p>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="delivery.html">Delivery Zone</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section2">
+            <div>
+                <p>© 2026 Verdant Market Co.</p>
+                <p>Grown with care in the Hudson Valley</p>
+            </div>
+        </section>
+
+    </footer>
+
+</body>
+</html>

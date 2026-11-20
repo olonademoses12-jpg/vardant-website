@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help Center | Verdant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="help.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
+    >
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="logo-header">
+        <div class="logo-container">
+
+            <div class="logo-section">
+                <div class="logo"></div>
+                <h2 class="logo-text">Verdant</h2>
+            </div>
+
+            <nav id="nav-section">
+                <ul class="nav-links">
+                    <li><a href="shop.html#shop">Shop</a></li>
+                    <li><a href="shop.html#farms">Our Farms</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+
+                <div class="section-2">
+                    <input
+                        type="text"
+                        placeholder="Search greens, bread....."
+                        class="search-bar"
+                        id="product-search"
+                    >
+
+                    <div class="auth-section" id="auth-section">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="cart-wrapper">
+                <button class="cart-button">
+                    Basket (<span id="cart-count">0</span>)
+                </button>
+
+                <div class="cart-dropdown" id="cart-dropdown">
+
+                    <div class="cart-heading">
+                        <h3>Your Basket</h3>
+                        <span id="cart-items-count">0 items</span>
+                    </div>
+
+                    <div id="cart-items">
+                        <p class="empty-cart">Your basket is empty.</p>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$<span id="cart-subtotal">0.00</span></span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+
+                        <div class="summary-row total-row">
+                            <strong>Total</strong>
+                            <strong>$<span id="cart-total">0.00</span></strong>
+                        </div>
+
+                        <button class="clear-basket-button" id="clear-basket">
+                            Clear Basket
+                        </button>
+
+                        <button class="checkout-button" id="checkout-button" disabled>
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="cart-notification" class="cart-notification">
+        Product added to basket!
+    </div>
+
+
+    <!-- HELP CENTER MAIN CONTENT -->
+    <main class="help-page">
+
+        <!-- HERO SECTION -->
+        <section class="help-hero">
+
+            <span class="help-label">WE'RE HERE TO HELP</span>
+
+            <h1>How can we help you?</h1>
+
+            <p>
+                Have a question about shopping with Verdant?
+                Find answers to common questions below.
+            </p>
+
+            <a href="#faq" class="help-hero-button">
+                Explore FAQs
+                <i class="ph-fill ph-arrow-down"></i>
+            </a>
+
+        </section>
+
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section" id="faq">
+
+            <div class="faq-heading">
+                <span>HELP CENTER</span>
+                <h2>Frequently asked questions</h2>
+                <p>
+                    Everything you need to know about shopping with Verdant.
+                </p>
+            </div>
+
+
+            <!-- SHOPPING -->
+            <div class="faq-category">
+
+                <h3>
+                    <i class="ph-fill ph-shopping-bag"></i>
+                    Shopping & Products
+                </h3>
+
+                <details class="faq-item">
+                    <summary>How do I shop for products on Verdant?</summary>
+                    <p>
+                        Visit our Shop page to explore available product categories.
+                        You can browse products, search for specific items, and use
+                        the available filters to find what you need.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I add products to my basket?</summary>
+                    <p>
+                        Find the product you want and click its Add button.
+                        The product will be added to your basket, where you can
+                        view it, change its quantity, or remove it.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I save products for later?</summary>
+                    <p>
+                        Yes. You can use the wishlist feature to save your favourite
+                        products and return to them whenever you want.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How can I find a particular product?</summary>
+                    <p>
+                        Use the search feature or browse by category.
+                        You can also sort products and apply price filters
+                        to narrow down your choices.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- ORDERS AND CHECKOUT -->
+            <div class="faq-category">
+
+                <h3>
+                    <i class="ph-fill ph-receipt"></i>
+                    Basket & Checkout
+                </h3>
+
+                <details class="faq-item">
+                    <summary>How do I check my basket?</summary>
+                    <p>
+                        Click the Basket button in the header.
+                        Your selected products, quantities and subtotal
+                        will appear in the basket dropdown.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I change the quantity of a product?</summary>
+                    <p>
+                        Yes. Open your basket and use the quantity controls
+                        beside the product to increase or decrease the number
+                        of items.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I proceed to checkout?</summary>
+                    <p>
+                        Add your preferred products to the basket and click
+                        Proceed to Checkout. You will be taken to the checkout
+                        page to review your selected products and customer details.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I remove products from my basket?</summary>
+                    <p>
+                        Yes. You can remove individual products from your basket
+                        or use the Clear Basket option to remove all its contents.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- JUMIA -->
+            <div class="faq-category">
+
+                <h3>
+                    <i class="ph-fill ph-storefront"></i>
+                    Products from Jumia
+                </h3>
+
+                <details class="faq-item">
+                    <summary>Why are some products taking me to Jumia?</summary>
+                    <p>
+                        Some products displayed on Verdant are affiliate products
+                        from Jumia. When you click Buy Now, you are redirected
+                        to the original Jumia product page to continue shopping.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I purchase Jumia products directly on Verdant?</summary>
+                    <p>
+                        No. Jumia affiliate products are purchased through
+                        Jumia's website. Verdant simply helps you discover
+                        those products and directs you to the original store.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Who handles orders for Jumia products?</summary>
+                    <p>
+                        Orders placed through Jumia are handled by Jumia
+                        and the relevant seller. Please refer to Jumia's
+                        website for order information and support.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+            <div class="faq-category">
+
+                <h3>
+                    <i class="ph-fill ph-user-circle"></i>
+                    Account & Registration
+                </h3>
+
+                <details class="faq-item">
+                    <summary>Do I need an account to use Verdant?</summary>
+                    <p>
+                        You can explore products without registering.
+                        Some account-related features may require you to
+                        log in or create an account.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I create an account?</summary>
+                    <p>
+                        Visit the Register page and complete the required
+                        information. Follow the instructions on the page
+                        to create your account.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What if I cannot log in?</summary>
+                    <p>
+                        Check that you have entered the correct login details.
+                        If the problem continues, you can reach out through
+                        our Contact page for assistance.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- DELIVERY -->
+            <div class="faq-category">
+
+                <h3>
+                    <i class="ph-fill ph-truck"></i>
+                    Delivery
+                </h3>
+
+                <details class="faq-item">
+                    <summary>How can I check if delivery is available in my area?</summary>
+                    <p>
+                        Use the delivery-area checker on our homepage.
+                        You can also visit our Delivery Zone page for
+                        more information about delivery coverage.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How long does delivery take?</summary>
+                    <p>
+                        Delivery availability and timing depend on the
+                        delivery area and the service arrangements.
+                        Check the delivery information provided during
+                        the shopping process.
+                    </p>
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT SUPPORT -->
+        <section class="help-contact">
+
+            <div>
+                <span>NEED MORE HELP?</span>
+
+                <h2>Still have questions?</h2>
+
+                <p>
+                    We would love to hear from you.
+                    Get in touch with us and let us know how we can help.
+                </p>
+            </div>
+
+            <a href="contact.html" class="contact-help-button">
+                Contact Us
+                <i class="ph-fill ph-arrow-up-right"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <section class="section1">
+
+            <div>
+                <div class="logo-sect">
+                    <div class="logo1"></div>
+                    <h2 class="logo-text1">Verdant</h2>
+                </div>
+
+                <p class="parag">
+                    The neighborhood grocer, rebuilt around family farms and fast e-bikes.
+                </p>
+            </div>
+
+            <div class="foot">
+
+                <div>
+                    <ul>
+                        <p>SHOP</p>
+                        <li><a href="shop.html#produce">Fresh Produce</a></li>
+                        <li><a href="shop.html#dairy">Dairy & Eggs</a></li>
+                        <li><a href="shop.html#bakery">Bakery</a></li>
+                        <li><a href="shop.html#pantry">Pantry</a></li>
+                        <li><a href="shop.html#meat">Meat & Fish</a></li>
+                        <li><a href="shop.html#flowers">Flowers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <p>COMPANY</p>
+                        <li><a href="shop.html#farms">Our Farms</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <p>SUPPORT</p>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="delivery.html">Delivery Zone</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section2">
+            <div>
+                <p>© 2026 Verdant Market Co.</p>
+                <p>Grown with care in the Hudson Valley</p>
+            </div>
+        </section>
+
+    </footer>
+
+</body>
+</html>
