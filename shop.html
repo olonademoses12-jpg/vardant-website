@@ -1,0 +1,1218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop | Verdant</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="logo-header">
+            <div class="logo-container">
+                <div class="logo-section">
+                <div class="logo"></div>
+                <h2 class="logo-text">Verdant</h2>
+                </div>
+
+                <nav id="nav-section">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html#shop">Shop</a></li>
+                        <li><a href="shop.html#farms">Our Farms</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                    </ul>
+
+                <div class="section-2">
+                       <input type="text"
+                        placeholder="Search greens, bread....."
+                        class="search-bar"
+                        id="product-search">                      
+                    <div class="auth-section" id="auth-section">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                    </div> 
+                </div>
+            </nav>
+
+            <div class="cart-wrapper">
+                <button class="cart-button">
+                    Basket (<span id="cart-count">0</span>)
+                </button>
+
+                <div class="cart-dropdown" id="cart-dropdown">
+
+                    <div class="cart-heading">
+                        <h3>Your Basket</h3>
+                        <span id="cart-items-count">0 items</span>
+                    </div>
+
+                    <div id="cart-items">
+                        <p class="empty-cart">Your basket is empty.</p>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$<span id="cart-subtotal">0.00</span></span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+
+                        <div class="summary-row total-row">
+                            <strong>Total</strong>
+                            <strong>$<span id="cart-total">0.00</span></strong>
+                        </div>
+
+                         <button class="clear-basket-button" id="clear-basket">
+                            Clear Basket
+                        </button>
+
+                        <button class="checkout-button" id="checkout-button" disabled>
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </header>
+        <div id="cart-notification" class="cart-notification">
+            Product added to basket!
+        </div>
+
+    <main>
+        <section class="shop-hero" id="shop">
+
+            <div class="shop-hero-content">
+
+                <span class="shop-label">THE VERDANT MARKET</span>
+
+                <h1>Good food starts with <span>good choices.</span></h1>
+
+                <p>
+                    Explore fresh produce, farm-raised essentials,
+                    artisan bakery favourites and everyday groceries
+                    carefully selected for your table.
+                </p>
+
+                <a href="#shop-categories" class="shop-hero-btn">
+                    Explore our collection
+                </a>
+
+            </div>
+
+            <div class="shop-hero-note">
+                <span>Fresh</span>
+                <span>Thoughtful</span>
+                <span>From the farm</span>
+            </div>
+
+     </section>
+
+
+    <section class="shop-categories" id="shop-categories">
+
+        <div class="shop-section-heading">
+            <span>EXPLORE VERDANT</span>
+            <h2>Shop by category</h2>
+            <p>Find something fresh for every part of your table.</p>
+        </div>
+
+        <div class="category-grid">
+
+            <a href="#produce" class="category-card">
+                <div class="category-image">
+                    <img src="images/second.jpg" alt="Fresh produce">
+                </div>
+                <h3>Fresh Produce</h3>
+                <span>Explore collection →</span>
+            </a>
+
+            <a href="#dairy" class="category-card">
+                <div class="category-image">
+                    <img src="images/third.jpg" alt="Dairy and eggs">
+                </div>
+                <h3>Dairy & Eggs</h3>
+                <span>Explore collection →</span>
+            </a>
+
+            <a href="#bakery" class="category-card">
+                <div class="category-image">
+                    <img src="images/fourth.jpg" alt="Fresh bakery products">
+                </div>
+                <h3>Bakery</h3>
+                <span>Explore collection →</span>
+            </a>
+
+            <a href="#pantry" class="category-card">
+                <div class="category-image">
+                    <img src="images/fifth.jpg" alt="Pantry essentials">
+                </div>
+                <h3>Pantry</h3>
+                <span>Explore collection →</span>
+            </a>
+
+            <a href="#meat" class="category-card">
+                <div class="category-image">
+                    <img src="images/sixth.jpg" alt="Fresh meat and fish">
+                </div>
+                <h3>Meat & Fish</h3>
+                <span>Explore collection →</span>
+            </a>
+
+            <a href="#flowers" class="category-card">
+                <div class="category-image">
+                    <img src="images/seventh.jpg" alt="Fresh flowers">
+                </div>
+                <h3>Flowers</h3>
+                <span>Explore collection →</span>
+            </a>
+
+        </div>
+
+    </section>
+
+        <div class="shop-toolbar">
+            <div>
+                <h3>Our Products</h3>
+                <p>Explore our fresh selections.</p>
+            </div>
+
+            <div class="sort-container">
+                <label for="sort-products">Sort by:</label>
+
+                <select id="sort-products">
+                    <option value="default">Featured</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                    <option value="a-z">Name: A to Z</option>
+                    <option value="z-a">Name: Z to A</option>
+                </select>
+            </div>
+             <div class="filter-container">
+            <label for="price-filter">Filter by price:</label>
+
+            <select id="price-filter">
+                <option value="all">All Prices</option>
+                <option value="0-10">Under $10</option>
+                <option value="10-25">$10 – $25</option>
+                <option value="25-50">$25 – $50</option>
+                <option value="50+">Above $50</option>
+            </select>
+        </div>
+        <button id="clear-filters" class="clear-filters">
+            Clear Filters
+        </button>
+        </div>
+
+
+    <section class="product-collection" id="produce">
+
+        <div class="collection-heading">
+            <div>
+                <span class="collection-label">FRESH FROM THE FARM</span>
+                <h2>Fresh Produce</h2>
+                <p>Bring home nature's goodness with our fresh selections.</p>
+            </div>
+
+            <span class="product-count">10 Fresh Picks</span>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+
+                    <img src="images/twelveth.webp" alt="Fresh strawberries">
+
+                    <!-- <button class="wishlist-button"
+                        data-name="Fresh Strawberries"
+                        data-price="4.50"
+                        data-image="images/twelveth.webp"
+                        aria-label="Add Fresh Strawberries to wishlist">
+                        ♡
+                    </button> -->
+
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Fresh Strawberries</h3>
+                    <p class="shop-product-price">$4.50</p>
+                    <button class="add-button"
+                        data-name="Fresh Strawberries"
+                        data-price="4.50"
+                        data-image="images/twelveth.webp">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/thirteen.webp" alt="Fresh lettuce">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Buttered Corn</h3>
+                    <p class="shop-product-price">$3.00</p>
+                    <button class="add-button"
+                        data-name="Buttered Corn"
+                        data-price="3.00"
+                        data-image="images/thirteen.webp">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/fourtheen.webp" alt="Fresh carrots">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Farm Assorted Nuts</h3>
+                    <p class="shop-product-price">$2.80</p>
+                    <button class="add-button"
+                        data-name="Farm Assorted Nuts"
+                        data-price="2.80"
+                        data-image="images/fourtheen.webp">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/fifteen.webp" alt="Fresh strawberries">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3> Fresh Yellow Watermelons</h3>
+                    <p class="shop-product-price">$5.00</p>
+                    <button class="add-button"
+                        data-name="Fresh Yellow Watermelon"
+                        data-price="5.00"
+                        data-image="images/fifteen.webp">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 5 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/sixteen.jpg" alt="Fresh broccoli">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Fresh Carrots</h3>
+                    <p class="shop-product-price">$3.50</p>
+                    <button class="add-button"
+                        data-name="Fresh Carrots"
+                        data-price="3.50"
+                        data-image="images/sixteen.jpg">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/seventeen.jpg" alt="Fresh cucumber">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Red Apple</h3>
+                    <p class="shop-product-price">$2.20</p>
+                    <button class="add-button"
+                        data-name="Red Apple"
+                        data-price="2.20"
+                        data-image="images/seventeen.jpg">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 7 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/eighteen.jpg" alt="Fresh bell peppers">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Fresh Salad Vegetables</h3>
+                    <p class="shop-product-price">$3.80</p>
+                    <button class="add-button"
+                        data-name="Fresh Salad Vegetables"
+                        data-price="3.80"
+                        data-image="images/eighteen.jpg">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 8 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/nineteen.jpg" alt="Fresh spinach">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Fresh Wheat Agriculture</h3>
+                    <p class="shop-product-price">$2.70</p>
+                    <button class="add-button"
+                        data-name="Fresh Wheat Agriculture"
+                        data-price="2.70"
+                        data-image="images/nineteen.jpg">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 9 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/twenty.jpg" alt="Fresh apples">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Farm Fresh Wheat</h3>
+                    <p class="shop-product-price">$4.00</p>
+                    <button class="add-button"
+                        data-name="Farm Fresh Wheat"
+                        data-price="4.00"
+                        data-image="images/twenty.jpg">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 10 -->
+            <div class="shop-product-card">
+                <div class="shop-product-image">
+                    <img src="images/twenty-one.jpg" alt="Fresh oranges">
+                </div>
+                <div class="shop-product-info">
+                    <span class="product-type">FRESH PRODUCE</span>
+                    <h3>Fresh White Cauliflowe</h3>
+                    <p class="shop-product-price">$3.20</p>
+                    <button class="add-button"
+                        data-name="Fresh White Cauliflowe"
+                        data-price="3.20"
+                        data-image="images/twenty-one.jpg">
+                        Add to Basket
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+        
+        <!-- DAIRY & EGGS SECTION -->
+
+        <section class="product-collection" id="dairy">
+
+            <div class="collection-heading">
+                <div>
+                    <span class="collection-label">FRESH FARM ESSENTIALS</span>
+                    <h2>Dairy & Eggs</h2>
+                    <p>Everyday goodness, carefully selected for your home.</p>
+                </div>
+
+                <span class="product-count">12 Fresh Picks</span>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- Product 1: Farm Fresh Eggs -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-two.jpg" alt="Farm fresh eggs">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Farm Fresh Eggs</h3>
+                        <p class="shop-product-price">$5.50</p>
+                        <button class="add-button"
+                            data-name="Farm Fresh Eggs"
+                            data-price="5.50"
+                            data-image="images/twenty-two.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Fresh Whole Milk -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-three.jpg" alt="Fresh whole milk">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Fresh Whole Milk</h3>
+                        <p class="shop-product-price">$4.20</p>
+                        <button class="add-button"
+                            data-name="Fresh Whole Milk"
+                            data-price="4.20"
+                            data-image="images/twenty-three.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Farmhouse Butter -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-four.jpg" alt="Creamy farm butter">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Farmhouse Butter</h3>
+                        <p class="shop-product-price">$4.80</p>
+                        <button class="add-button"
+                            data-name="Farmhouse Butter"
+                            data-price="4.80"
+                            data-image="images/twenty-four.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Natural Greek Yogurt -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-five.jpg" alt="Natural Greek yogurt">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Natural Greek Yogurt</h3>
+                        <p class="shop-product-price">$3.90</p>
+                        <button class="add-button"
+                            data-name="Natural Greek Yogurt"
+                            data-price="3.90"
+                            data-image="images/twenty-five.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Cheddar Cheese -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-six.jpg" alt="Fresh cheddar cheese">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Cheddar Cheese</h3>
+                        <p class="shop-product-price">$6.50</p>
+                        <button class="add-button"
+                            data-name="Cheddar Cheese"
+                            data-price="6.50"
+                            data-image="images/twenty-six.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Fresh Cooking Cream -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-seven.jpg" alt="Fresh cream">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Fresh Cooking Cream</h3>
+                        <p class="shop-product-price">$4.60</p>
+                        <button class="add-button"
+                            data-name="Fresh Cooking Cream"
+                            data-price="4.60"
+                            data-image="images/twenty-seven.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Organic Brown Eggs -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-eight.jpg" alt="Organic brown eggs">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Organic Brown Eggs</h3>
+                        <p class="shop-product-price">$6.00</p>
+                        <button class="add-button"
+                            data-name="Organic Brown Eggs"
+                            data-price="6.00"
+                            data-image="images/twenty-eight.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Fresh Mozzarella -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="images/twenty-nine.jpg" alt="Fresh mozzarella cheese">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAIRY & EGGS</span>
+                        <h3>Fresh Mozzarella</h3>
+                        <p class="shop-product-price">$5.80</p>
+                        <button class="add-button"
+                            data-name="Fresh Mozzarella"
+                            data-price="5.80"
+                            data-image="images/twenty-nine.jpg">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 9: Peak Full Cream Milk 400g -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/28/6366814/1.jpg?0028="
+                            alt="Peak Full Cream Milk 400g">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">MILK POWDER</span>
+                        <h3>Peak Full Cream Milk 400g</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/iZdYfht"
+                        class="buy-now-button"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 10: Peak Full Cream Milk 800g -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/27/7705914/1.jpg?7026="
+                            alt="Peak Full Cream Milk 800g">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">MILK POWDER</span>
+                        <h3>Peak Full Cream Milk 800g</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/vL7orJE"
+                        class="buy-now-button"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 11: Miksi Milk Powder 320g -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://i5.walmartimages.com/seo/Miksi-Milk-Instant-Dairy-Creamer-320g_065d14c1-1467-4946-aba2-a56b0f509fc3.14298c90a3bab134209fbf879698a8c9.png?odnBg=FFFFFF&odnHeight=768&odnWidth=768"
+                            alt="Miksi Milk Powder 320g">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">MILK POWDER</span>
+                        <h3>Miksi Milk Powder 320g</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/iP7y4LO"
+                        class="buy-now-button"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 12: Yugo Sweetened Yoghurt 500ml -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/01/7886104/1.jpg?1682="
+                            alt="Yugo Sweetened Yoghurt 500ml">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">YOGHURT</span>
+                        <h3>Yugo Sweetened Yoghurt 500ml</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/ZW6k0bc"
+                        class="buy-now-button"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
+ <!-- PANTRY SECTION -->
+
+        <section class="product-collection" id="pantry">
+
+            <div class="collection-heading">
+                <div>
+                    <span class="collection-label">EVERYDAY ESSENTIALS</span>
+                    <h2>Pantry</h2>
+                    <p>Stock your kitchen with quality everyday essentials.</p>
+                </div>
+                <span class="product-count">13 Pantry Picks</span>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- Product 1: Premium White Rice -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=800" alt="White Rice">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">GRAINS</span>
+                        <h3>Premium White Rice</h3>
+                        <p class="shop-product-price">$8.50</p>
+                        <button class="add-button" data-name="Premium White Rice" data-price="8.50" data-image="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Italian Pasta -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/8108063/pexels-photo-8108063.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pasta">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">PASTA</span>
+                        <h3>Italian Pasta</h3>
+                        <p class="shop-product-price">$4.50</p>
+                        <button class="add-button" data-name="Italian Pasta" data-price="4.50" data-image="https://images.pexels.com/photos/8108063/pexels-photo-8108063.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Pure Cooking Oil -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cooking Oil">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">COOKING ESSENTIALS</span>
+                        <h3>Pure Cooking Oil</h3>
+                        <p class="shop-product-price">$6.20</p>
+                        <button class="add-button" data-name="Pure Cooking Oil" data-price="6.20" data-image="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Natural Honey -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/8105035/pexels-photo-8105035.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Honey">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">NATURAL SWEETENERS</span>
+                        <h3>Natural Honey</h3>
+                        <p class="shop-product-price">$7.00</p>
+                        <button class="add-button" data-name="Natural Honey" data-price="7.00" data-image="https://images.pexels.com/photos/8105035/pexels-photo-8105035.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Premium White Rice -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=800" alt="White Rice">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">GRAINS</span>
+                        <h3>Premium White Rice</h3>
+                        <p class="shop-product-price">$8.50</p>
+                        <button class="add-button" data-name="Premium White Rice" data-price="8.50" data-image="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Rolled Oats -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Oats">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">BREAKFAST</span>
+                        <h3>Rolled Oats</h3>
+                        <p class="shop-product-price">$5.30</p>
+                        <button class="add-button" data-name="Rolled Oats" data-price="5.30" data-image="https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Peanut Butter -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/4198018/pexels-photo-4198018.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Peanut Butter">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">SPREADS</span>
+                        <h3>Peanut Butter</h3>
+                        <p class="shop-product-price">$4.80</p>
+                        <button class="add-button" data-name="Peanut Butter" data-price="4.80" data-image="https://images.pexels.com/photos/4198018/pexels-photo-4198018.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Natural Honey -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/8105035/pexels-photo-8105035.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Honey">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">NATURAL SWEETENERS</span>
+                        <h3>Natural Honey</h3>
+                        <p class="shop-product-price">$7.00</p>
+                        <button class="add-button" data-name="Natural Honey" data-price="7.00" data-image="https://images.pexels.com/photos/8105035/pexels-photo-8105035.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <!-- Product 9: Golden Terra Refined Vegetable Oil 25L -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/36/5009904/1.jpg?6280=" alt="Golden Terra Refined Vegetable Oil 25L">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">COOKING ESSENTIALS</span>
+                        <h3>Golden Terra Refined Vegetable Oil 25L</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/F726qFq" class="buy-now-button" target="_blank" rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 10: PEPPE Terra Cooking Paste -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/72/4113993/1.jpg?8264=" alt="PEPPE Terra Cooking Paste">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">COOKING ESSENTIALS</span>
+                        <h3>PEPPE Terra Cooking Paste 50g X5 X 10</h3>
+                        <p class="shop-product-price">₦8,500</p>
+                        <a href="https://jmia.io/8MsTmmf" class="buy-now-button" target="_blank" rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 11: Big Bull Rice 50kg -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/27/3810993/1.jpg?4041=" alt="Big Bull Rice 50kg">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">GRAINS</span>
+                        <h3>Big Bull Rice 50kg</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/8s3oiuv" class="buy-now-button" target="_blank" rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 12: Big Bull Rice 5kg -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/37/3810993/1.jpg?1084=" alt="Big Bull Rice 5kg">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">GRAINS</span>
+                        <h3>Big Bull Rice 5kg</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/Pc1O6VN" class="buy-now-button" target="_blank" rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 13: Honeywell Spaghetti -->
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://www.honeywellfood.com/_next/image/?dpl=dpl_3Uj6HdzuwNdth9uDXZvEykTgLkog&q=75&url=%2Fproducts+page%2Fspaghetti.jpg&w=1200" alt="Honeywell Spaghetti">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">PASTA</span>
+                        <h3>Honeywell Spaghetti</h3>
+                        <p class="shop-product-price">See price on Jumia</p>
+                        <a href="https://jmia.io/nykmvjC" class="buy-now-button" target="_blank" rel="noopener noreferrer">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+            <section class="product-collection" id="meat">
+
+            <div class="collection-heading">
+                <div>
+                    <span class="collection-label">FRESH & QUALITY</span>
+                    <h2>Meat & Fish</h2>
+                    <p>Freshly selected meat and seafood for delicious meals.</p>
+                </div>
+                <span class="product-count">6 Fresh Picks</span>
+            </div>
+
+            <div class="product-grid">
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/618775/pexels-photo-618775.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Beef">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">FRESH MEAT</span>
+                        <h3>Fresh Beef</h3>
+                        <p class="shop-product-price">$12.00</p>
+                        <button class="add-button" data-name="Fresh Beef" data-price="12.00" data-image="https://images.pexels.com/photos/618775/pexels-photo-618775.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                 <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Lamb">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">FRESH MEAT</span>
+                        <h3>Fresh Lamb</h3>
+                        <p class="shop-product-price">$14.00</p>
+                        <button class="add-button" data-name="Fresh Lamb" data-price="14.00" data-image="https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Chicken">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">POULTRY</span>
+                        <h3>Fresh Chicken</h3>
+                        <p class="shop-product-price">$9.50</p>
+                        <button class="add-button" data-name="Fresh Chicken" data-price="9.50" data-image="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Salmon">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">SEAFOOD</span>
+                        <h3>Fresh Salmon</h3>
+                        <p class="shop-product-price">$15.00</p>
+                        <button class="add-button" data-name="Fresh Salmon" data-price="15.00" data-image="https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Shrimp">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">SEAFOOD</span>
+                        <h3>Fresh Shrimp</h3>
+                        <p class="shop-product-price">$11.50</p>
+                        <button class="add-button" data-name="Fresh Shrimp" data-price="11.50" data-image="https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/1927377/pexels-photo-1927377.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Fish">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">FRESH FISH</span>
+                        <h3>Whole Fresh Fish</h3>
+                        <p class="shop-product-price">$10.00</p>
+                        <button class="add-button" data-name="Whole Fresh Fish" data-price="10.00" data-image="https://images.pexels.com/photos/1927377/pexels-photo-1927377.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                  <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Salmon">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">SEAFOOD</span>
+                        <h3>Fresh Salmon</h3>
+                        <p class="shop-product-price">$15.00</p>
+                        <button class="add-button" data-name="Fresh Salmon" data-price="15.00" data-image="https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Lamb">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">FRESH MEAT</span>
+                        <h3>Fresh Lamb</h3>
+                        <p class="shop-product-price">$14.00</p>
+                        <button class="add-button" data-name="Fresh Lamb" data-price="14.00" data-image="https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="product-collection" id="flowers">
+
+            <div class="collection-heading">
+                <div>
+                    <span class="collection-label">NATURE'S BEAUTY</span>
+                    <h2>Fresh Flowers</h2>
+                    <p>Brighten your home and make every moment special with beautiful fresh flowers.</p>
+                </div>
+                <span class="product-count">6 Floral Picks</span>
+            </div>
+
+            <div class="product-grid">
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Red Roses">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">ROSES</span>
+                        <h3>Classic Red Roses</h3>
+                        <p class="shop-product-price">$18.00</p>
+                        <button class="add-button" data-name="Classic Red Roses" data-price="18.00" data-image="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/1369068/pexels-photo-1369068.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sunflowers">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">SEASONAL FLOWERS</span>
+                        <h3>Bright Sunflowers</h3>
+                        <p class="shop-product-price">$12.50</p>
+                        <button class="add-button" data-name="Bright Sunflowers" data-price="12.50" data-image="https://images.pexels.com/photos/1369068/pexels-photo-1369068.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pink Tulips">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">TULIPS</span>
+                        <h3>Pink Tulips</h3>
+                        <p class="shop-product-price">$15.00</p>
+                        <button class="add-button" data-name="Pink Tulips" data-price="15.00" data-image="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&w=800" alt="White Daisies">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">DAISIES</span>
+                        <h3>White Daisies</h3>
+                        <p class="shop-product-price">$10.00</p>
+                        <button class="add-button" data-name="White Daisies" data-price="10.00" data-image="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                 <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Red Roses">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">ROSES</span>
+                        <h3>Classic Red Roses</h3>
+                        <p class="shop-product-price">$18.00</p>
+                        <button class="add-button" data-name="Classic Red Roses" data-price="18.00" data-image="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pink Peonies">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">PEONIES</span>
+                        <h3>Pink Peonies</h3>
+                        <p class="shop-product-price">$20.00</p>
+                        <button class="add-button" data-name="Pink Peonies" data-price="20.00" data-image="https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/931168/pexels-photo-931168.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mixed Flower Bouquet">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">BOUQUETS</span>
+                        <h3>Mixed Flower Bouquet</h3>
+                        <p class="shop-product-price">$22.00</p>
+                        <button class="add-button" data-name="Mixed Flower Bouquet" data-price="22.00" data-image="https://images.pexels.com/photos/931168/pexels-photo-931168.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+                 <div class="shop-product-card">
+                    <div class="shop-product-image">
+                        <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pink Tulips">
+                    </div>
+                    <div class="shop-product-info">
+                        <span class="product-type">TULIPS</span>
+                        <h3>Pink Tulips</h3>
+                        <p class="shop-product-price">$15.00</p>
+                        <button class="add-button" data-name="Pink Tulips" data-price="15.00" data-image="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=800">Add to Basket</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="farms-section" id="farms">
+
+            <div class="farms-heading">
+                <span>WHERE FRESHNESS BEGINS</span>
+                <h2>Meet Our Farms</h2>
+                <p>Behind every fresh selection is a farm, a dedicated grower and a commitment to quality.</p>
+            </div>
+
+            <div class="farms-grid">
+
+                <div class="farm-card">
+                    <div class="farm-image">
+                        <img src="https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Fresh vegetable farm">
+                    </div>
+                    <div class="farm-info">
+                        <span>FRESH PRODUCE</span>
+                        <h3>Green Valley Farms</h3>
+                        <p>Growing fresh vegetables and seasonal produce with care and attention.</p>
+                    </div>
+                </div>
+
+                <div class="farm-card">
+                    <div class="farm-image">
+                        <img src="https://images.pexels.com/photos/4911687/pexels-photo-4911687.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Dairy farm">
+                    </div>
+                    <div class="farm-info">
+                        <span>DAIRY & EGGS</span>
+                        <h3>Meadow Fresh Farms</h3>
+                        <p>Providing quality dairy essentials and farm-fresh eggs for your kitchen.</p>
+                    </div>
+                </div>
+
+                <div class="farm-card">
+                    <div class="farm-image">
+                        <img src="https://images.pexels.com/photos/2382904/pexels-photo-2382904.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Farm workers harvesting crops">
+                    </div>
+                    <div class="farm-info">
+                        <span>RESPONSIBLE FARMING</span>
+                        <h3>Sunrise Harvest Farms</h3>
+                        <p>Dedicated growers bringing carefully harvested food from the farm to your table.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="farms-bottom">
+                <h3>Good food has a story.</h3>
+                <p>We're proud to celebrate the people and farms behind the food you enjoy every day.</p>
+                <a href="#shop-categories">Explore our products</a>
+            </div>
+
+        </section>
+    </main>
+            
+    <footer>
+
+        <section class="section1">
+
+            <div>
+                <div class="logo-sect">
+                    <div class="logo1"></div>
+                    <h2 class="logo-text1">Verdant</h2>
+                </div>
+
+                <p class="parag">
+                    The neighborhood grocer, rebuilt around family farms and fast e-bikes.
+                </p>
+            </div>
+
+            <div class="foot">
+
+                <div>
+                    <ul>
+                        <p>SHOP</p>
+                        <li><a href="#produce">Fresh Produce</a></li>
+                        <li><a href="#dairy">Dairy & Eggs</a></li>
+                        <li><a href="#bakery">Bakery</a></li>
+                        <li><a href="#pantry">Pantry</a></li>
+                        <li><a href="#meat">Meat & Fish</a></li>
+                        <li><a href="#flowers">Flowers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <p>COMPANY</p>
+                        <li><a href="#farms">Our Farms</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <p>SUPPORT</p>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Delivery Zone</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section2">
+            <div>
+                <p>© 2026 Verdant Market Co.</p>
+                <p>Grown with care in the Hudson Valley</p>
+            </div>
+        </section>
+
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="wishlist.js" defer></script>
+
+</body>
+</html>

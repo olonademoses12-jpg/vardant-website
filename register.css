@@ -1,0 +1,122 @@
+.register-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EAEDDA;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 45px;
+    background: #FAF7EE;
+    border: 1px solid #E3DECB;
+    border-radius: 12px;
+} 
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 30px;
+} 
+
+.register-logo {
+    display: block;
+    margin-bottom: 30px;
+    color: #2F5D39;
+    font-family: "Lobster", cursive;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.register-heading > span {
+    color: #2F5D39;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.register-heading h1 {
+    margin: 12px 0;
+    color: #223929;
+    font-family: "Source Serif 4", serif;
+    font-size: 34px;
+}
+
+.register-heading p {
+    color: #6F6A5C;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #223929;
+    font-size: 14px;
+    font-weight: 600;
+} 
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #E3DECB;
+    border-radius: 7px;
+    background: #FFFFFF;
+    color: #223929;
+    font: inherit;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2F5D39;
+}
+
+.register-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    background: #2F5D39;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.register-button:hover {
+    background: #2F5D39;
+}
+
+.login-prompt {
+    margin-top: 25px;
+    text-align: center;
+    color: #6F6A5C;
+    font-size: 14px;
+}
+
+.login-prompt a {
+    color: #2F5D39;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    .register-container {
+        padding: 30px 22px;
+    }
+
+    .register-heading h1 {
+        font-size: 29px;
+    }
+}

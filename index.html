@@ -21,98 +21,226 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
     />
+    <script src="script.js" defer></script>
 </head>
 <body>
-   <header class="logo-header">
-    <div class="logo-container">
-        <div class="logo-section">
-        <div class="logo"></div>
-        <h2 class="logo-text">Verdant</h2>
-         </div>
+    <header class="logo-header">
+        <div class="logo-container">
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Our Farms</a></li>
-                <li><a href="#">Recipes</a></li>
-                <li><a href="#">Membership</a></li>
-            </ul>
-        </nav>
-    </div>
-        <div class="section-2">
-           <input type="text" placeholder="Search greens, bread....." class="search-bar">
-           <a href="">Login</a>
-           <button class="cart-button">Basket-3</button>
-           </div>
-   </header>
+            <div class="logo-section">
+                <div class="logo"></div>
+                <h2 class="logo-text">Verdant</h2>
+            </div>
+
+            <nav id="nav-section">
+                <ul class="nav-links">
+                    <li><a href="shop.html#shop">Shop</a></li>
+                    <li><a href="shop.html#farms">Our Farms</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+
+                <div class="section-2">
+                    <input type="text"
+                        placeholder="Search greens, bread....."
+                        class="search-bar"
+                        id="product-search">                  
+                    <div class="auth-section" id="auth-section">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="cart-wrapper">
+                <button class="cart-button">
+                    Basket (<span id="cart-count">0</span>)
+                </button>
+
+                <div class="cart-dropdown" id="cart-dropdown">
+
+                    <div class="cart-heading">
+                        <h3>Your Basket</h3>
+                        <span id="cart-items-count">0 items</span>
+                    </div>
+
+                    <div id="cart-items">
+                        <p class="empty-cart">Your basket is empty.</p>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$<span id="cart-subtotal">0.00</span></span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+
+                        <div class="summary-row total-row">
+                            <strong>Total</strong>
+                            <strong>$<span id="cart-total">0.00</span></strong>
+                        </div>
+
+                       <button class="clear-basket-button" id="clear-basket">
+                            Clear Basket
+                        </button>
+
+                        <button class="checkout-button" id="checkout-button" disabled>
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </header>
+        <div id="cart-notification" class="cart-notification">
+            Product added to basket!
+        </div>
+
    <main>
-        <!--FIRST SECTION--> 
-    <section class="first">
-        <div class="second-logo"></div>
-        <p><marquee behavior="scroll" direction="left">Same-day harvest delivery — order by 2pm, on your porch by 6pm</marquee></p>
-    </section>
-    <section class="second">
-        <div class="first-flex">
-            <div class="container1">
-                <div class="cont">
-                <p><span>New</span> Stone Hollow Farm strawberries are back</p>
-                </div>
-                <h1 class="groceries-title">Groceries that still taste like the farm.</h1>
-                <p class="info">Picked at dawn from 42 family farms, packed without plastic, and delivered to your door in under 4 hours. Fresher than the market, easier than the list.</p>
-            </div>
-            <div>
-                <form>
-                    <input type="text" placeholder="Enter ZIP · e.g. 11215">
-                    <button class="zip-button">Shop fresh</button>
-                </form>
-                <div class="review">
-                    <div class="color">
-                        <div class="circle1"></div>
-                        <div class="circle2"></div>
-                        <div class="circle3"></div>
+       
+     <!-- FIRST SECTION: ANNOUNCEMENT -->
+        <section class="first">
+            <div class="second-logo"></div>
+
+            <p>
+                <marquee behavior="scroll" direction="left">
+                    Same-day harvest delivery — order by 2pm, on your porch by 6pm
+                </marquee>
+            </p>
+        </section>
+
+
+        <!-- HERO SECTION -->
+        <section class="second">
+
+            <!-- LEFT SIDE -->
+            <div class="first-flex">
+
+                <div class="container1">
+
+                    <div class="cont">
+                        <p>
+                            <span>New</span> Stone Hollow Farm strawberries are back
+                        </p>
                     </div>
-                    <div class="para">
-                        <p>28k happy neighbors</p>
+
+                    <h1 class="groceries-title">
+                        Groceries that still taste like the farm.
+                    </h1>
+
+                    <p class="info">
+                        Picked at dawn from 42 family farms, packed without plastic,
+                        and delivered to your door in under 4 hours.
+                        Fresher than the market, easier than the list.
+                    </p>
+
+                </div>
+
+
+                <!-- ZIP CODE FORM -->
+                <div class="zip-section">
+
+                    <div class="zip-pointer">
+                        <span>Check your delivery area</span>
+                        <span class="zip-arrow">↓</span>
                     </div>
-                    <div>
-                        <p class="par"><strong>4.9</strong> · 6,200 reviews</p>
+
+                    <form id="zip-form">
+
+                        <input
+                            type="text"
+                            id="zip-input"
+                            placeholder="Enter 6-digit postal code"
+                            maxlength="6"
+                            inputmode="numeric"
+                            pattern="[0-9]{6}"
+                            required
+                        >
+
+                        <button type="submit" class="zip-button">
+                            Shop fresh
+                        </button>
+
+                    </form>
+
+                    <p id="zip-message"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE: PRODUCT IMAGE -->
+            <div class="right-side">
+
+                <div class="smaller">
+
+                    <div class="small"></div>
+
+                    <div class="small-style">
+                        <h3>2h 14m</h3>
+                        <p>avg. farm to door</p>
                     </div>
+
                 </div>
+
+
+                <div>
+
+                    <div class="image">
+                        <img src="/images/first.jpg" alt="Today's harvest box">
+                    </div>
+
+
+                    <div class="second-small">
+
+                        <div class="smallest">
+                            <h3>Today's harvest box</h3>
+                            <p>12 seasonal items · serves 3–4</p>
+                        </div>
+
+
+                        <div class="money">
+
+                            <p>$38</p>
+
+                            <button
+                                class="add-button"
+                                data-name="Today's harvest box"
+                                data-price="38"
+                                data-image="images/first.jpg"
+                            >
+                                Add
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-        </div>
-        <div class="right-side">
-            <div class="smaller">
-                <div class="small"></div>
-                <div class="small-style">
-                    <h3>2h 14m</h3>
-                    <p>avg. farm to door</p>
-                </div>
-            </div>
-            <div>
-            <div class="image">
-                <img src="/images/first.jpg" alt="first">
-            </div>
-            <div class="second-small">
-                <div class="smallest">
-                    <h3>Today's harvest box</h3>
-                    <p>12 seasonal items · serves 3–4</p>
-                </div>
-                <div class="money">
-                    <p>$38</p>
-                    <button class="add-button">Add</button>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-             <!-- SECOND SECTION -->
+
+        </section>
+
+        <!-- SECOND SECTION -->
     <section>
         <div>
             <div class="second-section">
                 <p>Aisles</p>
                 <div class="second-small-flex">
                     <h3>Shop by craving</h3>
-                    <a href="">View all aisles →</a>
+                    <a href="shop.html#shop">View all aisles →</a>
                 </div>
                 <div class="image-collection">
                     <div class="image">
@@ -156,7 +284,7 @@
                 <h4>How Verdant works</h4>
                 <h2>From soil to supper in three steps</h2>
                 <p>No warehouses, no week-old lettuce. We cut out the middle miles so flavor — and farmers — get more.</p>
-                <button>Start your first box</button>
+                <button> <a href="shop.html">Start your first box</a></button>
             </div>
             <div class="digit">
                 <div class="digit1">
@@ -184,63 +312,105 @@
         </div>
      </section>
      <!-- FOURTH SECTION -->
-      <section class="fourth-section">
-        <div class="fourth-first">
-            <h4>This week's picks</h4>
-            <div class="fourth-small">
-                <h3>Fresh off the truck</h3>
-              <ul class="fourth-flex">
-                <li><a href="">Age</a></li>
-                <li><a href="">Veggies</a></li>
-                <li><a href="">Bakery</a></li>
-                <li><a href="">Diary</a></li>
-              </ul>
-            </div>
-        </div>
-        <div class="fourth-images">
-            <div class="image-design">
-                <img src="images/eighth.jpg" alt="">
-                <h2>Heirloom Tomatoes</h2>
-                <p>Stone Hollow · 12mi</p>
-                <h3>Peak Season</h3>
-                <div class="fourth-smaller">
-                    <p>$4.20 /lb</p>
-                    <a href=""><i class="ph-fill ph-plus-circle" class="icon"></i></a>
+     
+<!-- FOURTH SECTION -->
+            <section class="fourth-section">
+                <div class="fourth-first">
+                    <h4>This week's picks</h4>
+
+                    <div class="fourth-small">
+                        <h3>Fresh off the truck</h3>
+
+                        <ul class="fourth-flex">
+                            <li><a href="shop.html#produce">Age</a></li>
+                            <li><a href="shop.html#pantry">Veggies</a></li>
+                            <li><a href="shop.html#bakery">Bakery</a></li>
+                            <li><a href="shop.html#dairy">Diary</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fourth-images">
+
+                    <!-- PRODUCT 1 -->
+                    <div class="image-design">
+                        <img src="images/eighth.jpg" alt="">
+                        <h2>Heirloom Tomatoes</h2>
+                        <p>Stone Hollow · 12mi</p>
+                        <h3>Peak Season</h3>
+
+                        <div class="fourth-smaller">
+                            <p>$4.20 /lb</p>
+
+                            <button class="add-button"
+                                data-name="Heirloom Tomatoes"
+                                data-price="4.20"
+                                data-image="/images/eighth.jpg">
+                                <i class="ph-fill ph-plus-circle icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUCT 2 -->
+                    <div class="image-design">
+                        <img src="images/nineth.jpg" alt="">
+                        <h2>Sourdough Loaf</h2>
+                        <p>Juniper Bakery · baked 6am</p>
+                        <h3>Baked Today</h3>
+
+                        <div class="fourth-smaller">
+                            <p>$7.50</p>
+
+                            <button class="add-button"
+                                data-name="Sourdough Loaf"
+                                data-price="7.50"
+                                data-image="/images/nineth.jpg">
+                                <i class="ph-fill ph-plus-circle icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUCT 3 -->
+                    <div class="image-design">
+                        <img src="images/tenth.jpg" alt="">
+                        <h2>Pasture Eggs, dozen</h2>
+                        <p>Pasture Eggs, dozen</p>
+                        <h3>Pasture-raised</h3>
+
+                        <div class="fourth-smaller">
+                            <p>$6.90</p>
+
+                            <button class="add-button"
+                                data-name="Pasture Eggs"
+                                data-price="6.90"
+                                data-image="/images/tenth.jpg">
+                                <i class="ph-fill ph-plus-circle icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUCT 4 -->
+                    <div class="image-design">
+                        <img src="images/eleventh.jpg" alt="">
+                        <h2>Wildflower Honey</h2>
+                        <p>Beelove · raw & unfiltered</p>
+                        <h3>Small batch</h3>
+
+                        <div class="fourth-smaller">
+                            <p>$11.00</p>
+
+                            <button class="add-button"
+                                data-name="Wildflower Honey"
+                                data-price="11.00"
+                                data-image="/images/eleventh.jpg">
+                                <i class="ph-fill ph-plus-circle icon"></i>
+                            </button>
+                        </div>
+                    </div>
 
                 </div>
-            </div>
-              <div class="image-design">
-                <img src="images/nineth.jpg" alt="">
-                <h2>Sourdough Loaf</h2>
-                <p>Juniper Bakery · baked 6am</p>
-                <h3>Baked Today</h3>
-                 <div class="fourth-smaller">
-                    <p>$7.50</p>
-                    <a href=""><i class="ph-fill ph-plus-circle" class="icon"></i></a>
-                </div>
-            </div>
-             <div class="image-design">
-                <img src="images/tenth.jpg" alt="">
-                <h2>Pasture Eggs, dozen</h2>
-                <p>Pasture Eggs, dozen</p>
-                <h3>Pasture-raised</h3>
-                <div class="fourth-smaller">
-                     <p>$6.90</p>
-                   <a href=""><i class="ph-fill ph-plus-circle" class="icon"></i></a>
-                </div>
-            </div>
-                <div class="image-design">
-                <img src="images/eleventh.jpg" alt="">
-                <h2>Wildflower Honey</h2>
-                <p>Beelove · raw & unfiltered</p>
-                <h3>Small batch</h3>
-                <div class="fourth-smaller">
-                     <p>$11.00</p>
-                    <a href=""><i class="ph-fill ph-plus-circle" class="icon"></i></a>
-                </div>
-            </div>
-        </div>
-      </section>
+            </section>
+
                              <!-- FIFTH SECTION -->
       <section class="fifth-section">
         <div class="fifth-first">
@@ -263,48 +433,68 @@
                 <a href=""><img src="images/download.png" alt=""></a>
             </div>
         </div>
-      </section>
-      <footer>
-        <section class="section1">
-            <div>
-                <div class="logo-sect">
-                    <div class="logo1"></div>
-                    <h2 class="logo-text1">Verdant</h2>
+    </section>
+    
+</main>
+    <footer>
+
+            <section class="section1">
+
+                <div>
+                    <div class="logo-sect">
+                        <div class="logo1"></div>
+                        <h2 class="logo-text1">Verdant</h2>
+                    </div>
+
+                    <p class="parag">
+                        The neighborhood grocer, rebuilt around family farms and fast e-bikes.
+                    </p>
                 </div>
-            <p class="parag">The neighborhood grocer, rebuilt around family farms and fast e-bikes.</p>   
-            </div>
-        </div>
-         <div class="foot">
-             <div>
-                 <ul><p>SHOP</p>
-                    <li><a href="#">Produce</a></li>
-                    <li><a href="#">Bakery</a></li>
-                    <li><a href="#">Pantry</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul><p>COMPANY</p>
-                <li><a href="#">Our Farms</a></li>
-                <li><a href="#">Sustainability</a></li>
-                <li><a href="">Careers</a></li>
-                </ul>
-            </div>
-             <div>
-                <ul><p>SUPPORT</p>
-                <li><a href="#">Help center</a></li>
-                <li><a href="#">Delivery zone</a></li>
-                <li><a href="">Contact</a></li>
-                </ul>
-            </div>
-         </div>
-        </section>
-        <section class="section2">
-            <div>
-                <p>© 2026 Verdant Market Co.</p>
-                <p>Grown with care in the Hudson Valley</p>
-            </div>
-        </section>
-      </footer>
-   </main>
+
+                <div class="foot">
+
+                    <div>
+                        <ul>
+                            <p>SHOP</p>
+                            <li><a href="#produce">Fresh Produce</a></li>
+                            <li><a href="#dairy">Dairy & Eggs</a></li>
+                            <li><a href="#bakery">Bakery</a></li>
+                            <li><a href="#pantry">Pantry</a></li>
+                            <li><a href="#meat">Meat & Fish</a></li>
+                            <li><a href="#flowers">Flowers</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <p>COMPANY</p>
+                            <li><a href="#farms">Our Farms</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <p>SUPPORT</p>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Delivery Zone</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="section2">
+                <div>
+                    <p>© 2026 Verdant Market Co.</p>
+                    <p>Grown with care in the Hudson Valley</p>
+                </div>
+            </section>
+
+        </footer>
+
 </body>
 </html>
