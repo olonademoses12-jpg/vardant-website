@@ -1,247 +1,380 @@
 
-// // GET SAVED WISHLIST PRODUCTS
+// ==========================================
+// GET SAVED WISHLIST PRODUCTS
+// ==========================================
 
-// let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+function getWishlistData() {
+    try {
+        const data = JSON.parse(localStorage.getItem('wishlist')) || [];
+        return Array.isArray(data) ? data : [];
+    } catch (error) {
+        return [];
+    }
+}
 
+let wishlist = getWishlistData();
 
-// // WISHLIST FUNCTIONALITY ON SHOP PAGE
 
-// const productCard = document.querySelectorAll('.shop-product-card');
+// ==========================================
+// WISHLIST FUNCTIONALITY ON SHOP PAGE
+// ==========================================
 
-// productCard.forEach((card) => {
+const productCards = document.querySelectorAll('.shop-product-card');
 
-//     const addButton = card.querySelector('.add-button');
-//     const imageContainer = card.querySelector('.shop-product-image');
+productCards.forEach((card) => {
 
-//     if (!addButton || !imageContainer) return;
+    const addButton = card.querySelector('.add-button');
+    const imageContainer = card.querySelector('.shop-product-image');
 
-//     // CREATE HEART BUTTON
+    if (!addButton || !imageContainer) return;
 
-//     let wishlistButton = imageContainer.querySelector('.wishlist-button');
+    let wishlistButton = imageContainer.querySelector('.wishlist-button');
 
-//     if (!wishlistButton) {
+    if (!wishlistButton) {
 
-//         wishlistButton = document.createElement('button');
+        wishlistButton = document.createElement('button');
 
-//         wishlistButton.classList.add('wishlist-button');
+        wishlistButton.classList.add('wishlist-button');
 
-//         imageContainer.appendChild(wishlistButton);
+        wishlistButton.type = 'button';
 
-//     }
+        imageContainer.appendChild(wishlistButton);
 
-//     // GET PRODUCT INFORMATION
+    }
 
-//     const product = {
-//         name: addButton.dataset.name,
-//         price: Number(addButton.dataset.price),
-//         image: addButton.dataset.image
-//     };
+    const product = {
+        name: addButton.dataset.name,
+        price: Number(addButton.dataset.price),
+        image: addButton.dataset.image
+    };
 
-//     wishlistButton.dataset.name = product.name;
+    if (
+        !product.name ||
+        !product.image ||
+        !Number.isFinite(product.price) ||
+        product.price < 0
+    ) {
+        return;
+    }
 
-//     wishlistButton.setAttribute(
-//         'aria-label',
-//         `Add ${product.name} to wishlist`
-//     );
+    wishlistButton.dataset.name = product.name;
 
-//     // CHECK IF PRODUCT IS SAVED
+    wishlistButton.setAttribute(
+        'aria-label',
+        `Add ${product.name} to wishlist`
+    );
 
-//     const isSaved = wishlist.some((item) => {
-//         return item.name === product.name;
-//     });
+    const isSaved = wishlist.some(
+        item => item.name === product.name
+    );
 
-//     wishlistButton.textContent = isSaved ? '♥' : '♡';
+    wishlistButton.textContent = isSaved ? '♥' : '♡';
 
-//     // HANDLE HEART BUTTON CLICK
 
-//     wishlistButton.addEventListener('click', () => {
+    wishlistButton.addEventListener('click', () => {
 
-//         const existingProduct = wishlist.find((item) => {
-//             return item.name === product.name;
-//         });
+        const existingProduct = wishlist.find(
+            item => item.name === product.name
+        );
 
-//         if (existingProduct) {
+        if (existingProduct) {
 
-//             wishlist = wishlist.filter((item) => {
-//                 return item.name !== product.name;
-//             });
+            wishlist = wishlist.filter(
+                item => item.name !== product.name
+            );
 
-//             wishlistButton.textContent = '♡';
+            wishlistButton.textContent = '♡';
 
-//         } else {
+        } else {
 
-//             wishlist.push(product);
+            wishlist.push(product);
 
-//             wishlistButton.textContent = '♥';
+            wishlistButton.textContent = '♥';
 
-//         }
+        }
 
-//         localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        saveWishlist();
 
-//     });
+    });
 
-// });
+});
 
 
-// // DISPLAY WISHLIST PRODUCTS
+// ==========================================
+// SAVE WISHLIST
+// ==========================================
 
-// const wishlistContainer = document.getElementById('wishlist-products');
+function saveWishlist() {
 
-// function displayWishlist() {
+    try {
 
-//     if (!wishlistContainer) return;
+        localStorage.setItem(
+            'wishlist',
+            JSON.stringify(wishlist)
+        );
 
-//     wishlistContainer.innerHTML = '';
+    } catch (error) {
 
-//     if (wishlist.length === 0) {
+        console.error('Unable to save wishlist.');
 
-//         wishlistContainer.innerHTML = `
-//             <div class="empty-wishlist">
-//                 <h2>Your wishlist is empty</h2>
-//                 <p>You haven't saved any products yet.</p>
-//             </div>
-//         `;
+    }
 
-//         return;
-//     }
+}
 
-//     wishlist.forEach((product) => {
 
-//         wishlistContainer.innerHTML += `
-//             <div class="wishlist-product-card">
+// ==========================================
+// DISPLAY WISHLIST PRODUCTS
+// ==========================================
 
-//                 <img src="${product.image}" alt="${product.name}">
+const wishlistContainer = document.getElementById('wishlist-products');
 
-//                 <div class="wishlist-product-info">
 
-//                     <h3>${product.name}</h3>
+function displayWishlist() {
 
-//                     <p class="wishlist-product-price">
-//                         $${product.price.toFixed(2)}
-//                     </p>
+    if (!wishlistContainer) return;
 
-//                     <div class="wishlist-product-actions">
+    wishlistContainer.innerHTML = '';
 
-//                         <button class="wishlist-add-button"
-//                             data-name="${product.name}"
-//                             data-price="${product.price}"
-//                             data-image="${product.image}">
-//                             Add to Basket
-//                         </button>
+    if (wishlist.length === 0) {
 
-//                         <button class="wishlist-remove-button"
-//                             data-name="${product.name}">
-//                             Remove
-//                         </button>
+        const emptyMessage = document.createElement('div');
 
-//                     </div>
+        emptyMessage.className = 'empty-wishlist';
 
-//                 </div>
+        const heading = document.createElement('h2');
 
-//             </div>
-//         `;
+        heading.textContent = 'Your wishlist is empty';
 
-//     });
+        const message = document.createElement('p');
 
-// }
+        message.textContent = "You haven't saved any products yet.";
 
+        emptyMessage.append(heading, message);
 
-// // HANDLE WISHLIST BUTTON CLICKS
+        wishlistContainer.appendChild(emptyMessage);
 
-// if (wishlistContainer) {
+        return;
 
-//     wishlistContainer.addEventListener('click', (event) => {
+    }
 
-//         // ADD TO BASKET
 
-//         const addToBasketButton = event.target.closest('.wishlist-add-button');
+    wishlist.forEach((product) => {
 
-//         if (addToBasketButton) {
+        const productCard = document.createElement('div');
 
-//             const productName = addToBasketButton.dataset.name;
-//             const productPrice = Number(addToBasketButton.dataset.price);
-//             const productImage = addToBasketButton.dataset.image;
+        productCard.className = 'wishlist-product-card';
 
-//             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-//             const existingProduct = cart.find((item) => {
-//                 return item.name === productName;
-//             });
+        const image = document.createElement('img');
 
-//             if (existingProduct) {
+        image.src = product.image;
 
-//                 existingProduct.quantity++;
+        image.alt = product.name;
 
-//             } else {
 
-//                 cart.push({
-//                     name: productName,
-//                     price: productPrice,
-//                     image: productImage,
-//                     quantity: 1
-//                 });
+        const productInfo = document.createElement('div');
 
-//             }
+        productInfo.className = 'wishlist-product-info';
 
-//             localStorage.setItem('cart', JSON.stringify(cart));
 
-//             alert(`${productName} added to your basket!`);
+        const productName = document.createElement('h3');
 
-//         }
+        productName.textContent = product.name;
 
 
-//         // REMOVE FROM WISHLIST
+        const price = document.createElement('p');
 
-//         const removeButton = event.target.closest('.wishlist-remove-button');
+        price.className = 'wishlist-product-price';
 
-//         if (removeButton) {
+        price.textContent = `$${product.price.toFixed(2)}`;
 
-//             const productName = removeButton.dataset.name;
 
-//             wishlist = wishlist.filter((item) => {
-//                 return item.name !== productName;
-//             });
+        const actions = document.createElement('div');
 
-//             localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        actions.className = 'wishlist-product-actions';
 
-//             displayWishlist();
 
-//         }
+        const addButton = document.createElement('button');
 
-//     });
+        addButton.className = 'wishlist-add-button';
 
-// }
+        addButton.type = 'button';
 
+        addButton.dataset.name = product.name;
 
-// // DISPLAY SAVED PRODUCTS
+        addButton.dataset.price = product.price;
 
-// displayWishlist();
+        addButton.dataset.image = product.image;
 
-// // PRODUCT RATINGS
+        addButton.textContent = 'Add to Basket';
 
-// const rating = document.querySelectorAll('.shop-product-card');
 
-// rating.forEach((card) => {
+        const removeButton = document.createElement('button');
 
-//     const productInfo = card.querySelector('.shop-product-info');
+        removeButton.className = 'wishlist-remove-button';
 
-//     if (!productInfo) return;
+        removeButton.type = 'button';
 
-//     const productName = productInfo.querySelector('h3');
+        removeButton.dataset.name = product.name;
 
-//     if (!productName) return;
+        removeButton.textContent = 'Remove';
 
-//     // GENERATE A RANDOM RATING
-//     const ratingNumber = (Math.random() * (5 - 4) + 4).toFixed(1);
-//     const reviewCount = Math.floor(Math.random() * 150) + 20;
 
-//     const productRating = document.createElement('div');
-//     productRating.classList.add('product-rating');
+        actions.append(addButton, removeButton);
 
-//     productRating.innerHTML = `
-//     <span class="stars">${'★'.repeat(Math.floor(ratingNumber))}${'☆'.repeat(5 - Math.floor(ratingNumber))}</span>
-//     <span class="rating-number">${ratingNumber}</span>
-//     <span class="review-count">(${reviewCount} reviews)</span>
-// `;
-//     productName.insertAdjacentElement('afterend', productRating);
-// });
+        productInfo.append(productName, price, actions);
+
+        productCard.append(image, productInfo);
+
+        wishlistContainer.appendChild(productCard);
+
+    });
+
+}
+
+
+// ==========================================
+// WISHLIST BUTTON ACTIONS
+// ==========================================
+
+if (wishlistContainer) {
+
+    wishlistContainer.addEventListener('click', (event) => {
+
+        const addToBasketButton =
+            event.target.closest('.wishlist-add-button');
+
+        const removeButton =
+            event.target.closest('.wishlist-remove-button');
+
+
+        // ADD PRODUCT TO BASKET
+
+        if (addToBasketButton) {
+
+            const productName = addToBasketButton.dataset.name;
+
+            const productPrice = Number(
+                addToBasketButton.dataset.price
+            );
+
+            const productImage = addToBasketButton.dataset.image;
+
+
+            if (
+                !productName ||
+                !productImage ||
+                !Number.isFinite(productPrice) ||
+                productPrice < 0
+            ) {
+                return;
+            }
+
+
+            let cart = [];
+
+            try {
+
+                const savedCart =
+                    JSON.parse(localStorage.getItem('cart')) || [];
+
+                cart = Array.isArray(savedCart) ? savedCart : [];
+
+            } catch (error) {
+
+                cart = [];
+
+            }
+
+
+            const existingProduct = cart.find(
+                item => item.name === productName
+            );
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    name: productName,
+
+                    price: productPrice,
+
+                    image: productImage,
+
+                    quantity: 1
+
+                });
+
+            }
+
+
+            try {
+
+                localStorage.setItem(
+                    'cart',
+                    JSON.stringify(cart)
+                );
+
+                alert(`${productName} added to your basket!`);
+
+            } catch (error) {
+
+                alert('Unable to add this product to your basket.');
+
+            }
+
+        }
+
+
+        // REMOVE PRODUCT FROM WISHLIST
+
+        if (removeButton) {
+
+            const productName = removeButton.dataset.name;
+
+            wishlist = wishlist.filter(
+                item => item.name !== productName
+            );
+
+            saveWishlist();
+
+            displayWishlist();
+
+        }
+
+    });
+
+}
+
+
+// ==========================================
+// INITIAL DISPLAY
+// ==========================================
+
+displayWishlist();
+
+
+// ==========================================
+// PRODUCT RATINGS
+// ==========================================
+
+const ratingCards = document.querySelectorAll('.shop-product-card');
+
+ratingCards.forEach((card) => {
+
+    const productInfo = card.querySelector('.shop-product-info');
+
+    if (!productInfo) return;
+
+    const productName = productInfo.querySelector('h3');
+
+    if (!productName) return;
+
+    // Do not generate fake customer ratings or review counts.
+
+});

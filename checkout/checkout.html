@@ -1,65 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | Verdant</title>
+    <title>Checkout Temporarily Unavailable | Verdant</title>
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="checkout.css">
 </head>
 <body>
 
-    <header class="checkout-header">
-        <h2>Verdant</h2>
-        <a href="../shop.html">Continue Shopping</a>
-    </header>
-
     <main class="checkout-container">
-
         <section class="customer-details">
-            <h1>Checkout</h1>
-            <p>Enter your details to complete your order.</p>
-
-            <form id="checkout-form">
-
-                <h3>Customer Information</h3>
-
-                <label for="customer-name">Full Name</label>
-                <input type="text" id="customer-name" required>
-
-                <label for="customer-email">Email Address</label>
-                <input type="email" id="customer-email" required>
-
-                <label for="customer-phone">Phone Number</label>
-                <input type="tel" id="customer-phone" required>
-
-                <h3>Delivery Information</h3>
-
-                <label for="delivery-address">Delivery Address</label>
-                <textarea id="delivery-address" required></textarea>
-
-                <button type="submit" id="place-order">
-                    Place Order
-                </button>
-
-            </form>
+            <h1>Checkout Temporarily Unavailable</h1>
+            <p>We're improving our ordering system. Please check back later.</p>
+            <a href="../index.html">Return to Home</a>
         </section>
-
-        <section class="order-summary">
-            <h2>Your Order</h2>
-
-            <div id="checkout-items">
-                <!-- Products will appear here -->
-            </div>
-
-           <p>Subtotal: $<span id="checkout-subtotal">0.00</span></p>
-
-            <p>Shipping-fee: $<span id="shipping-fee">0.00</span></p>
-
-            <p>Total: $<span id="checkout-total">0.00</span></p>
-        </section>
-
     </main>
-<script src="checkout.js"></script>
+
 </body>
 </html>

@@ -120,3 +120,11 @@
         font-size: 29px;
     }
 }
+.register-container {
+    text-align: center;
+}
+
+.register-button {
+    display: inline-block;
+    text-decoration: none;
+}

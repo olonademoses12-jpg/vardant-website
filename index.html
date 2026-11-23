@@ -1,29 +1,36 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verdant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lobster&display=swap" rel="stylesheet">
+    <meta name="description" content="Verdant is a demonstration grocery shopping website. Explore products, browse categories and try the shopping basket.">
+    <meta name="robots" content="index, follow">
+    <title>Verdant | Grocery Store</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lobster&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
     <link
         rel="stylesheet"
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-        />
-     <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
-    />
+    >
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
+    >
+
     <script src="script.js" defer></script>
 </head>
+
 <body>
+
     <header class="logo-header">
         <div class="logo-container">
 
@@ -40,19 +47,20 @@
                 </ul>
 
                 <div class="section-2">
-                    <input type="text"
+                    <input
+                        type="text"
                         placeholder="Search greens, bread....."
                         class="search-bar"
-                        id="product-search">                  
+                        id="product-search"
+                    >
+
                     <div class="auth-section" id="auth-section">
-                        <a href="login.html">Login</a>
-                        <a href="register.html">Register</a>
                     </div>
                 </div>
             </nav>
 
             <div class="cart-wrapper">
-                <button class="cart-button">
+                <button type="button" class="cart-button">
                     Basket (<span id="cart-count">0</span>)
                 </button>
 
@@ -68,6 +76,7 @@
                     </div>
 
                     <div class="cart-summary">
+
                         <div class="summary-row">
                             <span>Subtotal</span>
                             <span>$<span id="cart-subtotal">0.00</span></span>
@@ -83,13 +92,14 @@
                             <strong>$<span id="cart-total">0.00</span></strong>
                         </div>
 
-                       <button class="clear-basket-button" id="clear-basket">
+                        <button type="button" class="clear-basket-button" id="clear-basket">
                             Clear Basket
                         </button>
 
-                        <button class="checkout-button" id="checkout-button" disabled>
+                        <button type="button" class="checkout-button" id="checkout-button" disabled>
                             Proceed to Checkout
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -102,56 +112,54 @@
 
         </div>
     </header>
-        <div id="cart-notification" class="cart-notification">
-            Product added to basket!
-        </div>
 
-   <main>
-       
-     <!-- FIRST SECTION: ANNOUNCEMENT -->
+    <div id="cart-notification" class="cart-notification" role="status" aria-live="polite">
+        Product added to basket!
+    </div>
+
+    <main>
+
+        <!-- ANNOUNCEMENT SECTION -->
         <section class="first">
             <div class="second-logo"></div>
 
             <p>
                 <marquee behavior="scroll" direction="left">
-                    Same-day harvest delivery — order by 2pm, on your porch by 6pm
+                    Welcome to Verdant — Explore our grocery shopping demo
                 </marquee>
             </p>
         </section>
 
-
         <!-- HERO SECTION -->
         <section class="second">
 
-            <!-- LEFT SIDE -->
             <div class="first-flex">
 
                 <div class="container1">
 
                     <div class="cont">
                         <p>
-                            <span>New</span> Stone Hollow Farm strawberries are back
+                            <span>Demo</span> Explore our featured grocery collection
                         </p>
                     </div>
 
                     <h1 class="groceries-title">
-                        Groceries that still taste like the farm.
+                        Groceries that make everyday shopping easier.
                     </h1>
 
                     <p class="info">
-                        Picked at dawn from 42 family farms, packed without plastic,
-                        and delivered to your door in under 4 hours.
-                        Fresher than the market, easier than the list.
+                        Discover a selection of grocery products, browse different
+                        categories and try out the shopping experience on Verdant.
+                        This website is a demonstration project.
                     </p>
 
                 </div>
 
-
-                <!-- ZIP CODE FORM -->
+                <!-- POSTAL CODE FORM -->
                 <div class="zip-section">
 
                     <div class="zip-pointer">
-                        <span>Check your delivery area</span>
+                        <span>Explore our products</span>
                         <span class="zip-arrow">↓</span>
                     </div>
 
@@ -165,6 +173,7 @@
                             inputmode="numeric"
                             pattern="[0-9]{6}"
                             required
+                            aria-label="Six-digit postal code"
                         >
 
                         <button type="submit" class="zip-button">
@@ -179,7 +188,6 @@
 
             </div>
 
-
             <!-- RIGHT SIDE: PRODUCT IMAGE -->
             <div class="right-side">
 
@@ -188,33 +196,30 @@
                     <div class="small"></div>
 
                     <div class="small-style">
-                        <h3>2h 14m</h3>
-                        <p>avg. farm to door</p>
+                        <h3>Featured</h3>
+                        <p>Explore our collection</p>
                     </div>
 
                 </div>
 
-
                 <div>
 
                     <div class="image">
-                        <img src="/images/first.jpg" alt="Today's harvest box">
+                        <img src="images/first.jpg" alt="Featured grocery selection">
                     </div>
-
 
                     <div class="second-small">
 
                         <div class="smallest">
                             <h3>Today's harvest box</h3>
-                            <p>12 seasonal items · serves 3–4</p>
+                            <p>Sample grocery collection</p>
                         </div>
 
-
                         <div class="money">
-
                             <p>$38</p>
 
                             <button
+                                type="button"
                                 class="add-button"
                                 data-name="Today's harvest box"
                                 data-price="38"
@@ -222,7 +227,6 @@
                             >
                                 Add
                             </button>
-
                         </div>
 
                     </div>
@@ -233,209 +237,273 @@
 
         </section>
 
-        <!-- SECOND SECTION -->
-    <section>
-        <div>
-            <div class="second-section">
-                <p>Aisles</p>
-                <div class="second-small-flex">
-                    <h3>Shop by craving</h3>
-                    <a href="shop.html#shop">View all aisles →</a>
-                </div>
-                <div class="image-collection">
-                    <div class="image">
-                        <a href="shop.html#produce"><img src="images/second.jpg" alt=""></a>
-                        <h4>Produce</h4>
-                        <p>124 items</p>
-                    </div>
-                     <div class="image">
-                        <a href="shop.html#diary"><img src="images/fourth.jpg" alt=""></a>
-                        <h4>Diary & Eggs</h4>
-                        <p>68 items</p>
-                    </div>
-                     <div class="image">
-                       <a href="shop.html#bakery"><img src="images/third.jpg" alt=""></a>
-                        <h4>Bakery</h4>
-                        <p>52 items</p>
-                    </div>
-                     <div class="image">
-                        <a href="shop.html#pantry"><img src="images/sixth.jpg" alt=""></a>
-                        <h4>Pantry</h4>
-                        <p>210 items</p>
-                    </div>
-                     <div class="image">
-                        <a href="shop.html#meat"><img src="images/seventh.jpg" alt=""></a>
-                        <h4>Meet & Fish</h4>
-                        <p>84 items</p>
-                    </div>
-                     <div class="image">
-                        <a href="shop.html#flowers"><img src="images/fifth.jpg" alt=""></a>
-                        <h4>Flowers</h4>
-                        <p>36 items</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- THRID SECTION -->
-     <section class="third-flex">
-        <div class="third-main">
-            <div class="small-third">
-                <h4>How Verdant works</h4>
-                <h2>From soil to supper in three steps</h2>
-                <p>No warehouses, no week-old lettuce. We cut out the middle miles so flavor — and farmers — get more.</p>
-                <button> <a href="shop.html">Start your first box</a></button>
-            </div>
-            <div class="digit">
-                <div class="digit1">
-                    <h3>01</h3>
-                    <div>
-                        <h5>You shop the harvest</h5>
-                        <p>Live inventory from farms within 100 miles. What you see was picked this morning.</p>
-                    </div>
-                </div>
-                <div class="digit2">
-                    <h3>02</h3>
-                    <div>
-                        <h5>We pack light & cold</h5>
-                        <p>Paper, compostable wrap and chilled totes. Zero plastic, zero wilting.</p>
-                    </div>
-                </div>
-                 <div class="digit3">
-                    <h3>03</h3>
-                    <div>
-                        <h5>Doorstep in hours</h5>
-                        <p>E-bike couriers on 2-hour windows. Track from field to front step.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </section>
-     <!-- FOURTH SECTION -->
-     
-<!-- FOURTH SECTION -->
-            <section class="fourth-section">
-                <div class="fourth-first">
-                    <h4>This week's picks</h4>
-
-                    <div class="fourth-small">
-                        <h3>Fresh off the truck</h3>
-
-                        <ul class="fourth-flex">
-                            <li><a href="shop.html#produce">Age</a></li>
-                            <li><a href="shop.html#pantry">Veggies</a></li>
-                            <li><a href="shop.html#bakery">Bakery</a></li>
-                            <li><a href="shop.html#dairy">Diary</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="fourth-images">
-
-                    <!-- PRODUCT 1 -->
-                    <div class="image-design">
-                        <img src="images/eighth.jpg" alt="">
-                        <h2>Heirloom Tomatoes</h2>
-                        <p>Stone Hollow · 12mi</p>
-                        <h3>Peak Season</h3>
-
-                        <div class="fourth-smaller">
-                            <p>$4.20 /lb</p>
-
-                            <button class="add-button"
-                                data-name="Heirloom Tomatoes"
-                                data-price="4.20"
-                                data-image="/images/eighth.jpg">
-                                <i class="ph-fill ph-plus-circle icon"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PRODUCT 2 -->
-                    <div class="image-design">
-                        <img src="images/nineth.jpg" alt="">
-                        <h2>Sourdough Loaf</h2>
-                        <p>Juniper Bakery · baked 6am</p>
-                        <h3>Baked Today</h3>
-
-                        <div class="fourth-smaller">
-                            <p>$7.50</p>
-
-                            <button class="add-button"
-                                data-name="Sourdough Loaf"
-                                data-price="7.50"
-                                data-image="/images/nineth.jpg">
-                                <i class="ph-fill ph-plus-circle icon"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PRODUCT 3 -->
-                    <div class="image-design">
-                        <img src="images/tenth.jpg" alt="">
-                        <h2>Pasture Eggs, dozen</h2>
-                        <p>Pasture Eggs, dozen</p>
-                        <h3>Pasture-raised</h3>
-
-                        <div class="fourth-smaller">
-                            <p>$6.90</p>
-
-                            <button class="add-button"
-                                data-name="Pasture Eggs"
-                                data-price="6.90"
-                                data-image="/images/tenth.jpg">
-                                <i class="ph-fill ph-plus-circle icon"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PRODUCT 4 -->
-                    <div class="image-design">
-                        <img src="images/eleventh.jpg" alt="">
-                        <h2>Wildflower Honey</h2>
-                        <p>Beelove · raw & unfiltered</p>
-                        <h3>Small batch</h3>
-
-                        <div class="fourth-smaller">
-                            <p>$11.00</p>
-
-                            <button class="add-button"
-                                data-name="Wildflower Honey"
-                                data-price="11.00"
-                                data-image="/images/eleventh.jpg">
-                                <i class="ph-fill ph-plus-circle icon"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-                             <!-- FIFTH SECTION -->
-      <section class="fifth-section">
-        <div class="fifth-first">
-            <h6>WEEKEND · −20% GREENS</h6>
-            <h3>Salad days, half the price.</h3>
-            <span>Kale, arugula, little gems — all weekend, all local.</span>
-            <div class="button-design">
-            <button>Grab the deal</button>
-            <p>Ends Sun 11:59pm</p>
-            </div>
-        </div>
-        <div class="fifth-second">
+        <!-- SHOP BY CATEGORY -->
+        <section>
             <div>
-                <h3>Dinner plans? We text you when the truck leaves.</h3>
-                <p>Live tracking, swap items till dispatch, chat with your shopper.</p>
-                <button> <i class="ph-light ph-download-simple"></i> App Store</button>
-                <button> <i class="ph-light ph-download-simple"></i> Google play</button>
+                <div class="second-section">
+
+                    <p>Aisles</p>
+
+                    <div class="second-small-flex">
+                        <h3>Shop by category</h3>
+                        <a href="shop.html#shop">View all aisles →</a>
+                    </div>
+
+                    <div class="image-collection">
+
+                        <div class="image">
+                            <a href="shop.html#produce">
+                                <img src="images/second.jpg" alt="Fresh produce">
+                            </a>
+                            <h4>Produce</h4>
+                            <p>Explore products</p>
+                        </div>
+
+                        <div class="image">
+                            <a href="shop.html#dairy">
+                                <img src="images/fourth.jpg" alt="Dairy and eggs">
+                            </a>
+                            <h4>Dairy & Eggs</h4>
+                            <p>Explore products</p>
+                        </div>
+
+                        <div class="image">
+                            <a href="shop.html#bakery">
+                                <img src="images/third.jpg" alt="Bakery products">
+                            </a>
+                            <h4>Bakery</h4>
+                            <p>Explore products</p>
+                        </div>
+
+                        <div class="image">
+                            <a href="shop.html#pantry">
+                                <img src="images/sixth.jpg" alt="Pantry products">
+                            </a>
+                            <h4>Pantry</h4>
+                            <p>Explore products</p>
+                        </div>
+
+                        <div class="image">
+                            <a href="shop.html#meat">
+                                <img src="images/seventh.jpg" alt="Meat and fish">
+                            </a>
+                            <h4>Meat & Fish</h4>
+                            <p>Explore products</p>
+                        </div>
+
+                        <div class="image">
+                            <a href="shop.html#flowers">
+                                <img src="images/fifth.jpg" alt="Flowers">
+                            </a>
+                            <h4>Flowers</h4>
+                            <p>Explore products</p>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div>
-                <a href=""><img src="images/download.png" alt=""></a>
+        </section>
+
+        <!-- HOW VERDANT WORKS -->
+        <section class="third-flex">
+
+            <div class="third-main">
+
+                <div class="small-third">
+                    <h4>How Verdant works</h4>
+                    <h2>A simple shopping experience in three steps</h2>
+
+                    <p>
+                        Browse the available products, add your favourites
+                        to your basket and review your selections.
+                    </p>
+
+                    <button type="button">
+                        <a href="shop.html">Start shopping</a>
+                    </button>
+                </div>
+
+                <div class="digit">
+
+                    <div class="digit1">
+                        <h3>01</h3>
+                        <div>
+                            <h5>Explore products</h5>
+                            <p>Browse the different grocery categories and discover available products.</p>
+                        </div>
+                    </div>
+
+                    <div class="digit2">
+                        <h3>02</h3>
+                        <div>
+                            <h5>Add to your basket</h5>
+                            <p>Select the products you like and add them to your shopping basket.</p>
+                        </div>
+                    </div>
+
+                    <div class="digit3">
+                        <h3>03</h3>
+                        <div>
+                            <h5>Review your selection</h5>
+                            <p>Check your selected products and quantities before proceeding to checkout.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
-    
-</main>
+        </section>
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="fourth-section">
+
+            <div class="fourth-first">
+                <h4>Featured products</h4>
+
+                <div class="fourth-small">
+                    <h3>Explore our collection</h3>
+
+                    <ul class="fourth-flex">
+                        <li><a href="shop.html#produce">Produce</a></li>
+                        <li><a href="shop.html#pantry">Pantry</a></li>
+                        <li><a href="shop.html#bakery">Bakery</a></li>
+                        <li><a href="shop.html#dairy">Dairy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fourth-images">
+
+                <!-- PRODUCT 1 -->
+                <div class="image-design">
+                    <img src="images/eighth.jpg" alt="Heirloom tomatoes">
+                    <h2>Heirloom Tomatoes</h2>
+                    <p>Featured grocery product</p>
+                    <h3>Sample Product</h3>
+
+                    <div class="fourth-smaller">
+                        <p>$4.20 /lb</p>
+
+                        <button
+                            type="button"
+                            class="add-button"
+                            data-name="Heirloom Tomatoes"
+                            data-price="4.20"
+                            data-image="images/eighth.jpg"
+                            aria-label="Add Heirloom Tomatoes to basket"
+                        >
+                            <i class="ph-fill ph-plus-circle icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 2 -->
+                <div class="image-design">
+                    <img src="images/nineth.jpg" alt="Sourdough loaf">
+                    <h2>Sourdough Loaf</h2>
+                    <p>Featured bakery product</p>
+                    <h3>Sample Product</h3>
+
+                    <div class="fourth-smaller">
+                        <p>$7.50</p>
+
+                        <button
+                            type="button"
+                            class="add-button"
+                            data-name="Sourdough Loaf"
+                            data-price="7.50"
+                            data-image="images/nineth.jpg"
+                            aria-label="Add Sourdough Loaf to basket"
+                        >
+                            <i class="ph-fill ph-plus-circle icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 3 -->
+                <div class="image-design">
+                    <img src="images/tenth.jpg" alt="Pasture eggs">
+                    <h2>Pasture Eggs, dozen</h2>
+                    <p>Featured grocery product</p>
+                    <h3>Sample Product</h3>
+
+                    <div class="fourth-smaller">
+                        <p>$6.90</p>
+
+                        <button
+                            type="button"
+                            class="add-button"
+                            data-name="Pasture Eggs"
+                            data-price="6.90"
+                            data-image="images/tenth.jpg"
+                            aria-label="Add Pasture Eggs to basket"
+                        >
+                            <i class="ph-fill ph-plus-circle icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 4 -->
+                <div class="image-design">
+                    <img src="images/eleventh.jpg" alt="Wildflower honey">
+                    <h2>Wildflower Honey</h2>
+                    <p>Featured grocery product</p>
+                    <h3>Sample Product</h3>
+
+                    <div class="fourth-smaller">
+                        <p>$11.00</p>
+
+                        <button
+                            type="button"
+                            class="add-button"
+                            data-name="Wildflower Honey"
+                            data-price="11.00"
+                            data-image="images/eleventh.jpg"
+                            aria-label="Add Wildflower Honey to basket"
+                        >
+                            <i class="ph-fill ph-plus-circle icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FIFTH SECTION -->
+        <section class="fifth-section">
+
+            <div class="fifth-first">
+                <h6>VERDANT SHOPPING DEMO</h6>
+                <h3>Discover something fresh.</h3>
+                <span>Browse our grocery collection and try the shopping features.</span>
+
+                <div class="button-design">
+                    <button type="button" onclick="window.location.href='shop.html'">
+                        Explore products
+                    </button>
+                    <p>Demo website</p>
+                </div>
+            </div>
+
+            <div class="fifth-second">
+
+                <div>
+                    <h3>Your shopping experience, made simple.</h3>
+                    <p>
+                        Explore products, manage your basket and discover
+                        the features available on this demonstration website.
+                    </p>
+                </div>
+
+                <div>
+                    <img src="images/download.png" alt="Verdant shopping experience">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
     <!-- FOOTER -->
     <footer>
 
@@ -448,7 +516,7 @@
                 </div>
 
                 <p class="parag">
-                    The neighborhood grocer, rebuilt around family farms and fast e-bikes.
+                    A grocery shopping website demonstration.
                 </p>
             </div>
 
@@ -490,8 +558,8 @@
 
         <section class="section2">
             <div>
-                <p>© 2026 Verdant Market Co.</p>
-                <p>Grown with care in the Hudson Valley</p>
+                <p>© 2026 Verdant Website.</p>
+                <p>Created as a grocery shopping demonstration.</p>
             </div>
         </section>
 

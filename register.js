@@ -1,108 +1,120 @@
-// const registerForm = document.getElementById('register-form');
-// const password = document.getElementById('password');
-// const confirmPassword = document.getElementById('confirm-password');
 
-// const registerMessage = document.getElementById('register-message');
-// const phoneNumber = document.getElementById('phone');
-// const fullName = document.getElementById('full-name');
-// const email = document.getElementById('email');
+const registerForm = document.getElementById('register-form');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+const registerMessage = document.getElementById('register-message');
+const phoneNumber = document.getElementById('phone');
+const fullName = document.getElementById('full-name');
+const email = document.getElementById('email');
 
-// registerForm.addEventListener('submit', function(event) {
+// DISPLAY ERROR OR SUCCESS MESSAGE
+function showMessage(message, color = 'red') {
+    registerMessage.textContent = message;
+    registerMessage.style.color = color;
+}
 
-//     event.preventDefault();
-//     //check if full name is empty
+// HANDLE REGISTRATION
+registerForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-//     if(fullName.value.trim() === ''){
-//         registerMessage.textContent = 'please enter your full name'
-//         registerMessage.style.color = 'red'
-//         return;
-//     }
+    const nameValue = fullName.value.trim();
+    const emailValue = email.value.trim().toLowerCase();
+    const phoneValue = phoneNumber.value.trim();
+    const passwordValue = password.value;
 
-//     //check if password length < 8
+    // CHECK FULL NAME
+    if (nameValue === '') {
+        showMessage('Please enter your full name.');
+        return;
+    }
 
-//     if(password.value.length < 8){
-//         registerMessage.textContent = 'password must be at least 8 characters'
-//         registerMessage.style.color = 'red'
-//         return;
-//     }
-//     // Check password strength
-//     if (
-//         !/[A-Z]/.test(password.value) ||
-//         !/[a-z]/.test(password.value) ||
-//         !/[0-9]/.test(password.value) ||
-//         !/[^A-Za-z0-9]/.test(password.value)
-//     ) {
-//         registerMessage.textContent =
-//             'Password must contain an uppercase letter, a lowercase letter, a number, and a special character.';
+    // CHECK PASSWORD LENGTH
+    if (passwordValue.length < 8) {
+        showMessage('Password must be at least 8 characters long.');
+        return;
+    }
 
-//         registerMessage.style.color = 'red';
-//         return;
-//     }
-//     //check if phone number is not 11 digits
-//     if(!/^\d{11}$/.test(phoneNumber.value.trim())){
-//         registerMessage.textContent = 'Phone number be exactly 11 digits.';
-//         registerMessage.style.color = 'red' 
-//         return;
-//     };
+    // CHECK PASSWORD STRENGTH
+    if (
+        !/[A-Z]/.test(passwordValue) ||
+        !/[a-z]/.test(passwordValue) ||
+        !/[0-9]/.test(passwordValue) ||
+        !/[^A-Za-z0-9]/.test(passwordValue)
+    ) {
+        showMessage(
+            'Password must contain uppercase, lowercase, number and special character.'
+        );
+        return;
+    }
 
-//     //check if password is not equal to confirm password
-//     if(password.value !== confirmPassword.value){
-//         registerMessage.textContent = 'password do not match';
-//         registerMessage.style.color = 'red';
-//         return
-//     }
-//     // Check email format
-// if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-//     registerMessage.textContent = 'Please enter a valid email address.';
-//     registerMessage.style.color = 'red';
-//     return;
-// }
-// // Get existing registered users
+    // CHECK PHONE NUMBER
+    if (!/^\d{11}$/.test(phoneValue)) {
+        showMessage('Please enter a valid 11-digit phone number.');
+        return;
+    }
 
-// let users = JSON.parse(localStorage.getItem('users')) || [];
+    // CHECK PASSWORD CONFIRMATION
+    if (passwordValue !== confirmPassword.value) {
+        showMessage('Passwords do not match.');
+        return;
+    }
 
+    // CHECK EMAIL FORMAT
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        showMessage('Please enter a valid email address.');
+        return;
+    }
 
-// // Check if email already exists
+    // GET EXISTING USERS
+    let users = [];
 
-// const existingUser = users.find((user) => {
-//     return user.email === email.value.trim().toLowerCase();
-// });
+    try {
+        users = JSON.parse(localStorage.getItem('users')) || [];
 
-// if (existingUser) {
-//     registerMessage.textContent = 'An account with this email already exists.';
-//     registerMessage.style.color = 'red';
-//     return;
-// }
+        if (!Array.isArray(users)) {
+            showMessage('Unable to retrieve account information.');
+            return;
+        }
+    } catch (error) {
+        showMessage('Unable to retrieve account information.');
+        return;
+    }
 
-// // Create a new user
+    // CHECK IF EMAIL ALREADY EXISTS
+    const existingUser = users.find(function(user) {
+        return user.email === emailValue;
+    });
 
-// const newUser = {
-//     fullName: fullName.value.trim(),
-//     email: email.value.trim().toLowerCase(),
-//     phone: phoneNumber.value.trim(),
-//     password: password.value
-// };
+    if (existingUser) {
+        showMessage('An account with this email already exists.');
+        return;
+    }
 
+    // CREATE NEW USER
+    const newUser = {
+        fullName: nameValue,
+        email: emailValue,
+        phone: phoneValue,
+        password: passwordValue
+    };
 
+    // SAVE USER
+    users.push(newUser);
 
-// // Save the new user
+    try {
+        localStorage.setItem('users', JSON.stringify(users));
+    } catch (error) {
+        showMessage('Unable to create your account. Please try again.');
+        return;
+    }
 
-// users.push(newUser);
+    // SUCCESS MESSAGE
+    showMessage('Registration successful!', 'green');
 
-// localStorage.setItem('users', JSON.stringify(users));
+    registerForm.reset();
 
-
-// // Redirect to homepage after a short delay
-// setTimeout(() => {
-//     window.location.href = 'index.html';
-// }, 1500);
-
-// // Clear the form
-
-// registerForm.reset();
-       
-// });
-
-
-
-
+    // REDIRECT TO HOMEPAGE
+    setTimeout(function() {
+        window.location.href = 'index.html';
+    }, 1500);
+});

@@ -135,3 +135,11 @@
         flex-wrap: wrap;
     }
 }
+.login-container {
+    text-align: center;
+}
+
+.login-button {
+    display: inline-block;
+    text-decoration: none;
+}
